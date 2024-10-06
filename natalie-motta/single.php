@@ -95,7 +95,7 @@ $category = null;
             
             $query = new WP_Query($args);
             ?>
-            <p class="titre_imgpro">Vous aimerez aussi</p>
+            <h3 class="titre_imgpro">Vous aimerez aussi</h3>
             <div class="img_group">
                 <?php  if( $query ->have_posts() ) :
                     while($query->have_posts()): 

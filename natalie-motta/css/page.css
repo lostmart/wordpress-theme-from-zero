@@ -1,5 +1,18 @@
-.popup-overlay {
+@import url("header.css");
+@import url("footer.css");
 
-    display: none;
+
+h2 {
+    padding: 0 1em;
+}
+
+.page-custom {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    max-width: 900px;
+    align-items: center;
+    width: 90%;
+    min-height: 75dvh;
 
 }

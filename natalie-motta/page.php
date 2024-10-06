@@ -9,7 +9,9 @@ if (have_posts()) : while (have_posts()) : the_post();
 $category = null;
 ?>
 
-<h1> <?php echo get_the_title(); ?> </h1>
+<h2> <?php the_title(); ?> </h2>
+
+<div class="page-custom"><?php the_content(); ?></div>
 
 <?php
 endwhile; 

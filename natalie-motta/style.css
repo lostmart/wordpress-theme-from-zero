@@ -50,7 +50,6 @@ Text Domain:natmotta
 
 * {
 	box-sizing: border-box;
-	/* outline: 1px solid pink; */
 }
 
 body {
@@ -91,6 +90,8 @@ h3 {
 	max-height: 966px;
 	position: relative;
 	z-index: 1;
+	max-width: 1148px;
+	margin: auto;
 }
 
 .photograph__event {
@@ -381,7 +382,7 @@ a .categorie {
 	}
 
 	.lightbox__next {
-		left: 2px;
+		left: auto;
 	}
 
 	.lightbox__next {

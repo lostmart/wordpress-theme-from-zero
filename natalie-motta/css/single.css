@@ -4,10 +4,12 @@
 #reference {
 	visibility: hidden;
 }
+
 .post-info {
 	flex: 1;
 	position: relative;
 }
+
 .post-texte {
 	padding: 20px;
 	width: 100%;
@@ -53,7 +55,7 @@
 .single_title {
 	text-transform: uppercase;
 	font-style: var(--font-style-italic);
-	font-size: var(--font-size-h2);
+	font-size: 46px;
 	font-weight: var(--font-weight-normal);
 	line-height: 58px;
 }
@@ -66,9 +68,9 @@
 }
 
 .single_format a {
-	pointer-events: none; /* 링크 클릭 비활성화 */
-	text-decoration: none; /* 텍스트 데코레이션 제거 */
-	color: inherit; /* 부모 요소의 텍스트 색상 상속 */
+	pointer-events: none;
+	text-decoration: none;
+	color: inherit;
 }
 
 .card .lightbox-eye {
@@ -101,7 +103,8 @@
 }
 
 .attachment-post-thumbnail {
-	width: 563px;
+	width: 100%;
+	max-width: 563px;
 	height: 843px;
 	object-fit: contain;
 }
@@ -113,7 +116,7 @@
 	justify-content: space-between;
 	gap: 10px;
 	margin: 20px auto;
-	max-width: 1298px;
+	max-width: 1148px;
 	border-top: 1px solid var(--color-noir);
 	border-bottom: 1px solid var(--color-noir);
 	padding-top: 22px;
@@ -123,6 +126,7 @@
 .single_btn {
 	margin-left: -130px;
 }
+
 /* thumbnail image */
 
 .thumbnail_img {
@@ -130,13 +134,14 @@
 	height: 71px;
 	object-fit: cover;
 }
+
 .attachment-medium {
 	width: 100%;
 	height: 71px;
 	object-fit: cover;
 }
+
 .thumbnail {
-	/* margin-bottom: 10px;  썸네일과 화살표 사이의 간격 */
 	position: relative;
 	top: -18px;
 }
@@ -160,14 +165,15 @@
 .prev_arrow,
 .next_arrow {
 	display: inline-block;
-	width: 30px; /* 적절한 크기로 조정 */
+	width: 30px;
 	height: 30px;
-	text-decoration: none; /* 링크 밑줄 제거 */
-	color: black; /* 텍스트 색상 (next 링크) */
+	text-decoration: none;
+
+	color: black;
 }
 
 .prev_arrow img {
-	width: 100%; /* 이미지가 링크 크기에 맞게 조정 */
+	width: 100%;
 	height: auto;
 	opacity: 0;
 	transition: all 250ms ease-in-out;
@@ -175,16 +181,14 @@
 
 .next_arrow {
 	display: flex;
-	align-items: center; /* 세로 가운데 정렬 */
+	align-items: center;
 	justify-content: center;
 	width: 30px;
 	height: 30px;
-	/* background-color: #f0f0f0;  적절한 배경색 */
-	border-radius: 50%; /* 원형으로 만들기 위해 */
+	border-radius: 50%;
 }
 
 .titre_imgpro {
-	margin-left: -933px;
 	margin-bottom: 50px;
 	font-family: var(--font-primary);
 	font-size: var(--font-size-h3);
@@ -195,16 +199,19 @@
 .img_propose {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	margin-top: 50px;
 	padding-bottom: 90px;
+	max-width: 1148px;
+	margin: 50px auto 0 auto;
 }
+
 .img_group {
 	display: flex;
 	justify-content: space-between;
 	width: 100%;
 	max-width: 1148px;
+	margin: auto;
 }
+
 .post_photos {
 	width: 100%;
 	height: 100%;
@@ -213,11 +220,13 @@
 	justify-content: center;
 	align-items: center;
 }
+
 .post_photo {
 	width: 564px;
 	height: 495px;
 	object-fit: cover;
 }
+
 /* Responsive */
 
 @media (max-width: 768px) {
@@ -225,21 +234,31 @@
 		display: flex;
 		flex-direction: column-reverse;
 	}
+
+	.contact_line {
+		flex-direction: column;
+	}
+
 	.post-image {
 		order: 1;
 	}
+
 	.post-info {
-		order: -1; /* 자식 요소의 순서를 다음으로 설정 */
+		order: -1;
+		width: 100%;
+		max-width: 300px;
 	}
 
 	.post-texte {
 		top: 10px;
 	}
+
 	.text_group {
 		position: relative;
 		top: -24px;
 		order: 2;
 	}
+
 	.attachment-post-thumbnail {
 		width: 265px;
 		height: 397px;
@@ -249,24 +268,10 @@
 		position: relative;
 		top: 0px;
 	}
+
 	.single_title {
 		font-style: 46px;
 	}
-
-	/* .contact_line {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 50px;
-		margin: 100px auto;
-		border-top: 1px solid var(--color-noir);
-		border-bottom: 1px solid var(--color-noir);
-		padding-top: 22px;
-		padding-bottom: 22px;
-		position: relative;
-		top: -98px;
-		width: 100%;
-	} */
 
 	.single_btn {
 		margin-right: -128px;
@@ -274,19 +279,18 @@
 
 	.thumbnail_img {
 		display: none;
-		/* width: 81px;
-    height: 71px; */
 	}
+
 	.img_propose {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		width: 100%;
-		margin-top: -148px;
 		margin-left: 0;
 		margin-right: 0;
 	}
+
 	.titre_imgpro {
 		position: relative;
 		top: 0px;
@@ -303,6 +307,7 @@
 		flex-direction: column;
 		align-items: center;
 	}
+
 	.post_photos {
 		width: 100%;
 		height: 100%;
@@ -311,17 +316,10 @@
 		justify-content: center;
 		align-items: center;
 	}
+
 	.post_photo {
 		width: 317.66px;
 		height: 278px;
 		object-fit: cover;
 	}
 }
-
-/* @media (min-width: 1441px) {
-  .img_propose {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-} */

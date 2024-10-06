@@ -17,6 +17,9 @@
 <body <?php body_class(); ?>>
     <header>
 
+    <div class="header-container">
+
+
         <div class="site-branding">
             <?php
             if (function_exists('the_custom_logo') && has_custom_logo()) {
@@ -70,5 +73,5 @@
             </div></div>
         </div>
 
-
+    </div>
     </header>

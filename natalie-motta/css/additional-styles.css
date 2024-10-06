@@ -3,6 +3,7 @@
 a {
 	text-decoration: none;
 }
+
 ul,
 li {
 	list-style: none;
@@ -32,5 +33,6 @@ button:hover {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin: 100px 144px 0px 144px;
+	margin: 31px auto 0 auto;
+	max-width: 1148px;
 }
