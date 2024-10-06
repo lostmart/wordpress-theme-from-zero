@@ -1,0 +1,327 @@
+@import url("header.css");
+@import url("footer.css");
+
+#reference {
+	visibility: hidden;
+}
+.post-info {
+	flex: 1;
+	position: relative;
+}
+.post-texte {
+	padding: 20px;
+	width: 100%;
+	position: relative;
+	top: 215px;
+	gap: 20px;
+}
+
+.img_group .card::after {
+	content: "";
+	position: absolute;
+	top: 0px;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	height: 495px;
+	width: 564px;
+	background: #00000099;
+	opacity: 0;
+	transition: opacity 200ms ease-in-out;
+}
+
+.img_group .card .fullscreen {
+	position: absolute;
+	top: 10px;
+	right: 17px;
+	width: 35px;
+	height: 35px;
+	z-index: 10;
+	cursor: pointer;
+	object-fit: contain;
+	opacity: 0;
+	transition: opacity 200ms ease-in-out;
+	background: rgba(0, 0, 0, 0.85);
+	padding: 8px;
+	border-radius: 50%;
+}
+
+.img_group .card:hover ::after {
+	opacity: 1;
+}
+
+.single_title {
+	text-transform: uppercase;
+	font-style: var(--font-style-italic);
+	font-size: var(--font-size-h2);
+	font-weight: var(--font-weight-normal);
+	line-height: 58px;
+}
+
+.text_group {
+	text-transform: uppercase;
+	font-size: var(--font-size-description);
+	line-height: 20.73px;
+	font-weight: var(--font-weight-typo);
+}
+
+.single_format a {
+	pointer-events: none; /* 링크 클릭 비활성화 */
+	text-decoration: none; /* 텍스트 데코레이션 제거 */
+	color: inherit; /* 부모 요소의 텍스트 색상 상속 */
+}
+
+.card .lightbox-eye {
+	position: absolute;
+	z-index: 10;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 46px;
+	height: 31.204px;
+	cursor: pointer;
+	object-fit: contain;
+	opacity: 0;
+	transition: opacity 200ms ease-in-out;
+}
+
+.card:hover .fullscreen,
+.card:hover .lightbox-eye,
+.card:hover::after,
+.card:hover .title,
+.card:hover .categorie {
+	opacity: 1;
+}
+
+.post-image {
+	flex: 1;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.attachment-post-thumbnail {
+	width: 563px;
+	height: 843px;
+	object-fit: contain;
+}
+
+.contact_line {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 10px;
+	margin: 20px auto;
+	max-width: 1298px;
+	border-top: 1px solid var(--color-noir);
+	border-bottom: 1px solid var(--color-noir);
+	padding-top: 22px;
+	padding-bottom: 22px;
+}
+
+.single_btn {
+	margin-left: -130px;
+}
+/* thumbnail image */
+
+.thumbnail_img {
+	width: 81px;
+	height: 71px;
+	object-fit: cover;
+}
+.attachment-medium {
+	width: 100%;
+	height: 71px;
+	object-fit: cover;
+}
+.thumbnail {
+	/* margin-bottom: 10px;  썸네일과 화살표 사이의 간격 */
+	position: relative;
+	top: -18px;
+}
+
+.thumbnail img {
+	opacity: 0;
+	transition: all 250ms ease-in-out;
+}
+
+.attachment-medium {
+	position: absolute;
+	width: 100%;
+}
+
+.arrows {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 60px;
+}
+
+.prev_arrow,
+.next_arrow {
+	display: inline-block;
+	width: 30px; /* 적절한 크기로 조정 */
+	height: 30px;
+	text-decoration: none; /* 링크 밑줄 제거 */
+	color: black; /* 텍스트 색상 (next 링크) */
+}
+
+.prev_arrow img {
+	width: 100%; /* 이미지가 링크 크기에 맞게 조정 */
+	height: auto;
+	opacity: 0;
+	transition: all 250ms ease-in-out;
+}
+
+.next_arrow {
+	display: flex;
+	align-items: center; /* 세로 가운데 정렬 */
+	justify-content: center;
+	width: 30px;
+	height: 30px;
+	/* background-color: #f0f0f0;  적절한 배경색 */
+	border-radius: 50%; /* 원형으로 만들기 위해 */
+}
+
+.titre_imgpro {
+	margin-left: -933px;
+	margin-bottom: 50px;
+	font-family: var(--font-primary);
+	font-size: var(--font-size-h3);
+	text-transform: uppercase;
+	font-weight: var(--font-weight-normal);
+}
+
+.img_propose {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 50px;
+	padding-bottom: 90px;
+}
+.img_group {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	max-width: 1148px;
+}
+.post_photos {
+	width: 100%;
+	height: 100%;
+	margin-left: 0px;
+	object-fit: contain;
+	justify-content: center;
+	align-items: center;
+}
+.post_photo {
+	width: 564px;
+	height: 495px;
+	object-fit: cover;
+}
+/* Responsive */
+
+@media (max-width: 768px) {
+	.single_post {
+		display: flex;
+		flex-direction: column-reverse;
+	}
+	.post-image {
+		order: 1;
+	}
+	.post-info {
+		order: -1; /* 자식 요소의 순서를 다음으로 설정 */
+	}
+
+	.post-texte {
+		top: 10px;
+	}
+	.text_group {
+		position: relative;
+		top: -24px;
+		order: 2;
+	}
+	.attachment-post-thumbnail {
+		width: 265px;
+		height: 397px;
+		object-fit: contain;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+		top: 0px;
+	}
+	.single_title {
+		font-style: 46px;
+	}
+
+	/* .contact_line {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 50px;
+		margin: 100px auto;
+		border-top: 1px solid var(--color-noir);
+		border-bottom: 1px solid var(--color-noir);
+		padding-top: 22px;
+		padding-bottom: 22px;
+		position: relative;
+		top: -98px;
+		width: 100%;
+	} */
+
+	.single_btn {
+		margin-right: -128px;
+	}
+
+	.thumbnail_img {
+		display: none;
+		/* width: 81px;
+    height: 71px; */
+	}
+	.img_propose {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		margin-top: -148px;
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.titre_imgpro {
+		position: relative;
+		top: 0px;
+		margin-left: 0px;
+		width: 229px;
+		font-size: 18px;
+		font-weight: var(--font-weight-normal);
+		text-transform: uppercase;
+		line-height: 26px;
+	}
+
+	.img_group {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.post_photos {
+		width: 100%;
+		height: 100%;
+		margin-left: -8px;
+		object-fit: contain;
+		justify-content: center;
+		align-items: center;
+	}
+	.post_photo {
+		width: 317.66px;
+		height: 278px;
+		object-fit: cover;
+	}
+}
+
+/* @media (min-width: 1441px) {
+  .img_propose {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+} */

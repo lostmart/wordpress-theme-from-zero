@@ -1,0 +1,327 @@
+.photo__header {
+	max-height: 966px;
+	max-width: 1450px;
+	margin: auto;
+	margin-bottom: 70px;
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	height: 80px;
+	padding: 16px;
+	background-color: var(--color-blanc);
+	transition: all var(--animation-duration) ease-in-out;
+	z-index: 99;
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+/* logo */
+.site-branding {
+	display: flex;
+	align-items: flex-start;
+	margin-left: 200px;
+}
+
+.site-branding a {
+	text-decoration: none;
+	color: #000; /* 원하는 색상으로 변경 */
+	font-size: 24px;
+	font-weight: bold;
+}
+.custom-logo {
+	width: 216px;
+	height: 14px;
+	/* margin-top: 25px; */
+}
+.primary-menu {
+	margin-left: auto; /* 메뉴를 오른쪽으로 정렬 */
+}
+
+/* menu */
+.primary-menu {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	text-align: center;
+	padding: 10px 15px;
+	margin-right: 150px;
+	cursor: pointer;
+}
+
+.contact-btn {
+	display: inline-block;
+	background-color: white;
+	padding: 6px 16px;
+	border-radius: 6px;
+	cursor: pointer;
+}
+
+.primary-menu li {
+	margin-right: 20px; /* 리스트 아이템 간 간격 추가 */
+}
+
+.menu-item a,
+.menu-item span {
+	color: var(--color-noir);
+	font-weight: var(--font-weight-normal);
+	font-size: var(--font-size-p);
+	font-family: var(--font-primary);
+	text-transform: uppercase;
+}
+
+.menu-toggle {
+	display: block;
+	cursor: pointer;
+}
+
+.line_menu {
+	transition: all 250ms ease-in-out;
+}
+
+/* popup style */
+
+.popup-overlay {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: #00000060;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 999; /* à enlever */
+	/* opacity: 0; */
+	top: 0;
+	left: 0;
+	display: none;
+	align-items: center;
+	justify-content: center;
+}
+.popup-salon {
+	background: white;
+	max-width: 597px;
+	height: 800px;
+	padding: 30px;
+	margin: auto;
+	position: relative;
+	border: 5px solid black;
+	overflow: hidden;
+}
+label {
+	font-size: var(--font-size-typo);
+	font-family: var(--font-secondary);
+	font-weight: var(--font-weight-typo);
+}
+.popup-header {
+	position: relative;
+	top: -16px;
+	left: -174px;
+	height: 106px;
+}
+.popup-body {
+	width: 263px;
+	position: relative;
+	top: 20px;
+	left: 130px;
+	margin-bottom: 30px;
+}
+input.wpcf7-form-control.wpcf7-text.wpcf7-validates-as-required {
+	width: 263px;
+	height: 40px;
+	border: 1px solid var(--color-gris-border);
+	border-radius: 8px;
+}
+
+textarea.wpcf7-form-control.wpcf7-textarea {
+	width: 263px;
+	height: 210px;
+	border: 1px solid var(--color-gris-border);
+	border-radius: 8px;
+}
+
+input.wpcf7-form-control.wpcf7-submit.has-spinner {
+	background-color: var(--color-gris-medium);
+	outline: 0;
+	border: 0;
+	width: 263px;
+	height: 50px;
+	color: var(--color-noir);
+}
+input.wpcf7-form-control.wpcf7-submit.has-spinner:hover {
+	outline: 1px solid var(--color-noir);
+	color: var(--color-blanc);
+	background-color: var(--color-noir);
+}
+/*  menu animations  */
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes slideIn {
+	0% {
+		transform: translateX(100%);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+
+.fadeInAnim {
+	animation: fadeIn 320ms ease-in-out forwards;
+}
+
+.slideInAnim {
+	animation: slideIn 320ms ease-in-out forwards;
+}
+
+@media (max-width: 768px) {
+	.custom-logo-link {
+		margin-left: -160px;
+	}
+
+	.menu-toggle {
+		display: block;
+		position: relative;
+		background-color: transparent;
+		z-index: 100;
+		left: 10%;
+		/*top:0px; */
+		width: 40px;
+		height: 30px;
+		cursor: pointer;
+	}
+	.primary-menu {
+		display: none;
+		flex-direction: column;
+	}
+	.primary-menu.show {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		position: absolute;
+		width: 100%;
+		max-height: 82vh;
+		height: 100%;
+		left: 0px;
+		background-color: #e00000;
+		z-index: 100;
+		top: 109px;
+		gap: 18px;
+	}
+	.menu-item-object-page a,
+	.menu-item-object-page span {
+		font-size: 44px;
+		color: var(--color-blanc);
+		font-family: var(--font-primary);
+		position: relative;
+		left: 10px;
+		line-height: 65.16px;
+		display: flex;
+		text-align: center;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.menu-item-btn {
+		background-color: transparent;
+	}
+	.line_menu {
+		display: block;
+		width: 30px;
+		height: 3px;
+		background-color: black;
+		margin: 6px 0;
+		transition: all 250ms ease-in-out;
+	}
+
+	/* frontpage CTA responsive */
+
+	.photographe {
+		width: 100%;
+		object-fit: cover;
+		height: auto; /* 이미지 비율 유지 */
+		max-height: 255px;
+		position: relative;
+		z-index: 1;
+	}
+
+	.photograph__event {
+		margin: 0;
+		width: 100%;
+		font-family: var(--font-primary);
+		font-weight: var(--font-weight-bold);
+		font-size: 28px;
+		font-style: var(--font-style-italic);
+		line-height: 40.86px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 2;
+		display: flex;
+		text-align: center;
+		align-items: center;
+		justify-content: center;
+		gap: 10px;
+		color: transparent;
+		-webkit-text-stroke: 1px var(--color-blanc);
+	}
+	/* popup style */
+
+	.popup-salon {
+		background: white;
+		max-width: 302px;
+		height: 590px;
+		padding: 30px;
+		margin: auto;
+		position: relative;
+		border: 5px solid black;
+		overflow: hidden;
+	}
+
+	.popup-header {
+		position: relative;
+		top: -21px;
+		left: -190px;
+		height: 55px;
+	}
+	.popup-body {
+		width: 263px;
+		position: relative;
+		top: -30px;
+		left: 4px;
+	}
+
+	input.wpcf7-form-control.wpcf7-text.wpcf7-validates-as-required {
+		width: 190px;
+		height: 40px;
+		border: 1px solid var(--color-gris-border);
+		border-radius: 8px;
+	}
+
+	textarea.wpcf7-form-control.wpcf7-textarea {
+		width: 190px;
+		height: 149px;
+	}
+
+	input.wpcf7-form-control.wpcf7-submit.has-spinner {
+		background-color: var(--color-gris-medium);
+		outline: 0;
+		border: 0;
+		width: 190px;
+		height: 50px;
+		color: var(--color-noir);
+	}
+	/* input.wpcf7-form-control.wpcf7-submit.has-spinner:hover{
+  outline: 1px solid var(--color-noir);
+  color: var(--color-blanc);
+  background-color: var(--color-noir);
+} */
+}
