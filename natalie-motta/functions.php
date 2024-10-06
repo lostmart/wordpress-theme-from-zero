@@ -254,8 +254,6 @@ function my_plugin_enqueue_scripts()
 
 
 
-// add_action('wp_enqueue_scripts', 'projet11_scripts');
-// add_action('wp_enqueue_scripts', 'script_lightbox');
 add_action('wp_enqueue_scripts', 'my_plugin_enqueue_scripts');
 add_action('wp_enqueue_scripts', 'script_menu');
 add_action('wp_enqueue_scripts', 'script_filter');

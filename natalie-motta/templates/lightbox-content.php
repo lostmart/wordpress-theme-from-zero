@@ -1,4 +1,3 @@
-<!-- 라이트박스 HTML 구조 -->
 <div class="lightbox">
             <div class="lightbox__box">
                 <button class="lightbox__close">Fermer</button>

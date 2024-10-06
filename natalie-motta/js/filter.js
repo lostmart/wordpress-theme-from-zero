@@ -1,17 +1,3 @@
-// const url =  js_filter_js.ajax_url
-// const  formData = new FormData();
-
-// formData.append( 'action', 'single_post_ajax' );
-
-// fetch(url,
-//       {
-//             method: 'POST',
-//             body: formData,
-//       }
-// )
-//       .then(response => response.text())
-//       .then(data => console.log(data))
-
 addEventListener("DOMContentLoaded", () => {
 	const form_div = document.querySelector(".formulaire")
 	const li_list = form_div.querySelectorAll("li")
@@ -59,7 +45,7 @@ addEventListener("DOMContentLoaded", () => {
 	li_list.forEach((element) => {
 		element.addEventListener("click", (e) => {
 			e.stopPropagation()
-			console.log(element.innerText, element.getAttribute("data-field"))
+			// console.log(element.innerText, element.getAttribute("data-field"))
 			const url = js_filter_js.ajax_url
 			const formData = new FormData()
 			formData.append("action", "filter_post_ajax")
@@ -102,13 +88,12 @@ addEventListener("DOMContentLoaded", () => {
 				.then((data) => {
 					const container = document.getElementById("photo-container")
 					container.innerHTML = "" // efface tout
-					console.log(data)
+					// console.log(data)
 					if (data.success) {
-						console.log(data.data)
+						// console.log(data.data)
 						container.insertAdjacentHTML("beforeend", data.data.content)
 						fullscreenArray = document.querySelectorAll(".fullscreen")
 						//console.log(fullscreenArray);
-						// 각 'fullscreen' 요소에 클릭 이벤트 리스너 추가
 						fullscreenArray.forEach((fullBtn, i) => {
 							fullBtn.addEventListener("click", () => {
 								arrayIndex = i
@@ -157,7 +142,6 @@ addEventListener("DOMContentLoaded", function () {
 					}
 					fullscreenArray = document.querySelectorAll(".fullscreen")
 					//console.log(fullscreenArray);
-					// 각 'fullscreen' 요소에 클릭 이벤트 리스너 추가
 					fullscreenArray.forEach((fullBtn, i) => {
 						fullBtn.addEventListener("click", () => {
 							arrayIndex = i
