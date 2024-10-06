@@ -39,21 +39,21 @@ git clone https://github.com/lostmart/wordpress-theme-from-zero
 
 - Upload the Theme
 
-    - Compress the theme folder into a .zip file.
-    - Upload it to your WordPress site through the Appearance > Themes > Add New section.
+  - Compress the theme folder into a .zip file.
+  - Upload it to your WordPress site through the Appearance > Themes > Add New section.
 
 - Activate the Theme
 
-    - Once uploaded, activate the theme in the WordPress dashboard.
+  - Once uploaded, activate the theme in the WordPress dashboard.
 
 - Install Required Plugins
 
-    - Install and activate the following plugins for the theme to work correctly:
+  - Install and activate the following plugins for the theme to work correctly:
 
-    - CPT UI
-    - ACF (Advanced Custom Fields)
+  - CPT UI
+  - ACF (Advanced Custom Fields)
 
--  Set up the custom post type, taxonomies, and fields using these plugins.
+- Set up the custom post type, taxonomies, and fields using these plugins.
 
 ### Usage
 
@@ -81,3 +81,13 @@ git clone https://github.com/lostmart/wordpress-theme-from-zero
 
 - The dynamic photo filtering uses asynchronous JavaScript (Fetch API) to retrieve taxonomies via WordPress's WP_Query().
 - The theme includes the necessary JavaScript code to handle this fetching and update the page content in real-time.
+
+### Custom Styles and Scripts
+
+- The theme includes custom styles and scripts to enhance the front-end display and functionality.
+- If you wish to modify these, locate the corresponding CSS and JavaScript files in the theme's /assets folder.
+
+### Credits
+
+- CPT UI for managing custom post types and taxonomies.
+- ACF (Advanced Custom Fields) for handling custom fields within the theme.
