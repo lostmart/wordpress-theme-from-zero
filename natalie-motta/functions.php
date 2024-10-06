@@ -27,6 +27,8 @@ function projet11_enqueue_styles()
     if (is_page()) {
         // Load the general page style
         wp_enqueue_style('projet11-page', get_template_directory_uri() . '/css/page.css');
+        wp_enqueue_style('projet11-header', get_template_directory_uri() . '/css/header.css');
+
     }
 
     // Load the footer style on all pages (as an example, if you want to load a footer style everywhere)
