@@ -1,0 +1,486 @@
+@charset "UTF-8";
+/* 
+Theme Name: Natalie Motta
+Theme URI: http://example.com/ 
+Author: Luciule Piccoli
+Description:  Nathalie Mota, photographe professionnelle dans l’événementiel
+Version: 1.0 
+License: GNU General Public License v2 or later 
+License URI: http://www.gnu.org/licenses/gpl-2.0.html 
+Text Domain:natmotta
+ */
+
+/* global css */
+
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import "./css/lightbox.css";
+
+/* Global */
+:root {
+	/* Color */
+	--color-rouge-secondaire: #fe5858;
+	--color-rouge: #e00000;
+	--color-rouge-tertiaire: #ffd6d6;
+	--color-noir: #000000;
+	--color-bleu-fonce: #313144;
+	--color-gris-fonce: #c4c4c4;
+	--color-gris-border: #b8bbc2;
+	--color-gris-medium: #d8d8d8;
+	--color-gris-light: #e5e5e5;
+	--color-blanc: #ffffff;
+
+	/* font style */
+	--font-primary: "Space Mono", monospace;
+	--font-secondary: "Poppins", sans-serif;
+	--font-weight-light: 300;
+	--font-weight-normal: 400;
+	--font-weight-typo: 500;
+	--font-weight-bold: 700;
+
+	--font-size-h1: 6rem;
+	--font-size-h2: 4.1rem;
+	--font-size-h3: 1.125rem;
+	--font-size-p: 1rem;
+	--font-size-typo: 12px;
+	--font-size-description: 14px;
+
+	--font-style-italic: italic;
+}
+
+* {
+	box-sizing: border-box;
+	/* outline: 1px solid pink; */
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+h1,
+h2,
+h3,
+p {
+	font-family: var(--font-primary);
+}
+
+h1 {
+	font-weight: var(--font-weight-bold);
+}
+
+h2 {
+	font-weight: var(--font-weight-bold);
+}
+
+h3 {
+	font-weight: var(--font-weight-normal);
+}
+
+/* FRONT PAGE STYLE CSS*/
+.photo__content {
+	height: 1100px;
+}
+
+.photographe {
+	width: 100%;
+	object-fit: cover;
+	height: 100%;
+	display: block;
+	max-height: 966px;
+	position: relative;
+	z-index: 1;
+}
+
+.photograph__event {
+	font-family: var(--font-primary);
+	font-weight: var(--font-weight-bold);
+	font-size: var(--font-size-h1);
+	font-style: var(--font-style-italic);
+	position: relative;
+	top: -600px;
+	z-index: 2;
+	display: flex;
+	gap: 10px;
+	justify-content: center;
+	color: transparent;
+	-webkit-text-stroke: 1px white;
+}
+
+/* FORMULAIRE SECTION */
+.formulaire {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin: auto;
+	max-width: 1148px;
+	align-items: center;
+	width: 90%;
+}
+
+.formulaire .form-firstCol {
+	display: flex;
+	justify-content: center;
+	gap: 39px;
+	margin-bottom: 8px;
+}
+
+/* .categories,.formats,.trierpar*/
+
+.trierpar {
+	margin-top: -8px;
+}
+
+article {
+	text-align: start;
+	font-family: var(--font-secondary);
+	font-size: var(--font-size-typo);
+	background-color: var(--color-blanc);
+	font-weight: var(--font-weight-typo);
+	text-transform: uppercase;
+	line-height: 18px;
+	color: var(--color-bleu-fonce);
+}
+
+.select-btn {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	width: 260px;
+	height: 42px;
+	border: 1.3px solid var(--color-gris-border);
+	border-radius: 8px;
+	padding: 11px 18px;
+	position: relative;
+	cursor: pointer;
+}
+
+.select-btn .svg {
+	position: absolute;
+	right: 14px;
+	opacity: 0;
+}
+
+.select-btn svg {
+	transition: opacity 350ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+.ul-category,
+.ul-formats,
+.ul-trier {
+	/* height: fit-content; */
+	background-color: var(--color-blanc);
+	padding: 0;
+	margin-top: 0;
+	position: absolute;
+	z-index: 100;
+	width: 260px;
+	border-radius: 0px 0px 8px 8px;
+	overflow-y: hidden;
+	transition: height 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+	visibility: hidden;
+	height: 0;
+}
+
+.ul-category li:first-child {
+	margin-top: 24px;
+}
+
+.ul-category li,
+.ul-formats li,
+.ul-trier li {
+	padding: 11px 24px;
+	font-size: var(--font-size-typo);
+	font-weight: var(--font-weight-typo);
+	font-family: var(--font-secondary);
+	width: 100%;
+	width: 260px;
+}
+
+.select-active {
+	color: white;
+	background: var(--color-rouge);
+}
+
+.ul-category li:hover,
+.ul-formats li:hover,
+.ul-trier li:hover {
+	background: var(--color-rouge-tertiaire);
+	width: 100%;
+}
+
+.ul-category li:active,
+.ul-formats li:active,
+.ul-trier li:active {
+	background: var(--color-rouge-secondaire);
+}
+
+/* filter section */
+
+.filter {
+	display: flex;
+	gap: 20px;
+	padding: 20px;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	flex-wrap: wrap;
+}
+
+.card {
+	position: relative;
+	top: 0px;
+	width: 564px;
+	height: 495px;
+	border: 1px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	/* Card shadow */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+}
+
+.post_img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.filter .card::after {
+	content: "";
+	position: absolute;
+	top: 0px;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	height: 496px;
+	width: 564px;
+	background: #00000099;
+	opacity: 0;
+	transition: opacity 200ms ease-in-out;
+}
+
+.filter .card .fullscreen {
+	position: absolute;
+	top: 10px;
+	right: 17px;
+	width: 35px;
+	height: 35px;
+	z-index: 10;
+	cursor: pointer;
+	object-fit: contain;
+	opacity: 0;
+	transition: opacity 200ms ease-in-out;
+	background: rgba(0, 0, 0, 0.85);
+	padding: 8px;
+	border-radius: 50%;
+}
+
+.filter .card .lightbox-eye {
+	position: absolute;
+	z-index: 10;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 46px;
+	height: 31.204px;
+	cursor: pointer;
+	object-fit: contain;
+	opacity: 0;
+	transition: opacity 200ms ease-in-out;
+}
+
+.card .title,
+.card .categorie {
+	position: absolute;
+	color: white;
+	z-index: 10;
+	font-size: 14px;
+	letter-spacing: 1.4px;
+	text-transform: uppercase;
+	opacity: 0;
+	transition: opacity 200ms ease-in-out;
+}
+
+.filter .card:hover .fullscreen,
+.filter .card:hover .lightbox-eye,
+.filter .card:hover::after,
+.filter .card:hover .title,
+.filter .card:hover .categorie {
+	opacity: 1;
+}
+
+.card .title {
+	left: 16px;
+	bottom: 12px;
+	font-family: var(--font-secondary);
+	font-weight: 500;
+}
+
+a .categorie {
+	right: 16px;
+	bottom: 12px;
+	font-family: var(--font-primary);
+	font-weight: 400;
+}
+
+
+/* load more */
+#load-more {
+	display: block;
+	margin: 20px auto;
+	padding: 10px 20px;
+	background-color: var(--color-gris-medium);
+	color: var(--color-noir);
+	font-family: var(--font-primary);
+	font-size: var(--font-size-typo);
+	border: none;
+	cursor: pointer;
+}
+
+#load-more:hover {
+	background-color: #555;
+}
+
+.wpcf7-form {
+	width: 100%;
+}
+
+@media (max-width: 1070px) {
+	.formulaire {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.trierpar {
+		margin-top: 0;
+	}
+}
+
+/* responsive */
+@media (max-width: 768px) {
+	.photo__content {
+		height: 100%;
+		position: relative;
+		margin-bottom: 28px;
+	}
+
+	/* FORMULAIRE SECTION */
+
+	.formulaire .form-firstCol {
+		flex-direction: column;
+		gap: 8px;
+	}
+
+	article {
+		width: 270px;
+	}
+
+	.lightbox__next {
+		left: 2px;
+	}
+
+	.lightbox__next {
+		right: 2px;
+	}
+
+	.select-btn {
+		width: 100%;
+	}
+
+	.ul-category,
+	.ul-formats,
+	.ul-trier {
+		width: 100%;
+		margin: 0;
+	}
+
+	.ul-category {
+		max-width: 270px;
+	}
+
+	.ul-category li,
+	.ul-formats li,
+	.ul-trier li {
+		width: 100%;
+	}
+
+	/* filter section */
+	.filter {
+		display: grid;
+		grid-template-columns: repeat(1, 320px);
+
+		justify-content: center;
+		align-items: center;
+	}
+
+	.card {
+		position: relative;
+		top: 0px;
+		width: 317px;
+		height: 278px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.post_img {
+		width: 100%;
+		margin: 10px;
+		object-fit: cover;
+	}
+
+	.filter .card::after {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		height: 100%;
+		width: 100%;
+		background: #00000099;
+		transition: opacity 200ms ease-in-out;
+	}
+
+	.filter .card img {
+		width: 317px;
+		height: 278px;
+	}
+
+	.post_img {
+		width: 100%;
+		height: 70%;
+	}
+
+	.title {
+		font-size: 1.2em;
+		font-weight: bold;
+		margin-top: 10px;
+	}
+
+	.categorie {
+		font-size: 0.9em;
+		color: #666;
+		margin-top: 5px;
+	}
+
+	.post_link {
+		margin-top: -81px;
+		font-size: 0.9em;
+		color: #32373c;
+	}
+
+	.filter .card .title {
+		left: 23px;
+		top: 219px;
+	}
+
+	ul.post-categories {
+		position: relative;
+		left: 29px;
+		top: -71px;
+	}
+}
